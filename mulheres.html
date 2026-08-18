@@ -139,6 +139,48 @@ html[data-tema="claro"] .card p b{color:var(--sageD)}
   text-transform:uppercase;font-weight:700;color:var(--sage);margin-top:9px}
 html[data-tema="claro"] .inf .c .go{color:var(--sageD)}
 
+
+/* ---------- paleta do encontro ---------- */
+.palgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:12px}
+.sw{appearance:none;border:none;padding:0;background:none;cursor:pointer;text-align:center;display:block;width:100%;
+  font-family:'Inter',sans-serif}
+.sw .chip{display:block;width:100%;aspect-ratio:3/4;border-radius:16px;background:var(--c);position:relative;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.14), inset 0 -22px 34px -26px rgba(0,0,0,.55),
+    0 14px 30px -20px rgba(0,0,0,.85);
+  transition:transform .26s cubic-bezier(.22,.8,.3,1), box-shadow .26s ease}
+.sw .chip::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(126deg,rgba(255,255,255,.32) 8%,transparent 46%)}
+.sw .nm{display:block;font-size:9px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
+  color:var(--soft2);margin-top:9px;line-height:1.4;transition:color .26s ease}
+.sw[aria-pressed="true"] .chip{transform:translateY(-4px) scale(1.02);
+  box-shadow:0 0 0 2px var(--bg2), 0 0 0 3.5px var(--c),
+    inset 0 0 0 1px rgba(0,0,0,.14), 0 20px 40px -20px var(--c)}
+.sw[aria-pressed="true"] .nm{color:var(--gold)}
+@media(hover:hover){.sw:hover .chip{transform:translateY(-3px)}}
+
+.palinfo{margin-top:14px;padding:20px;position:relative;overflow:hidden;border-radius:18px}
+.palinfo::after{content:"";position:absolute;left:0;top:14%;bottom:14%;width:4px;border-radius:0 5px 5px 0;
+  background:var(--sel,#F3DFA2);transition:background .3s ease}
+.palinfo .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.palinfo .nome{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;line-height:1.15;
+  color:var(--ttl)}
+.palinfo .hex{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;letter-spacing:.1em;
+  color:var(--soft2);white-space:nowrap}
+.palinfo .txt{font-size:13.5px;line-height:1.65;color:var(--soft);margin-top:9px}
+.palinfo .fade{animation:fadeIn .34s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.combos{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.cb{display:flex;align-items:center;gap:13px;padding:13px 15px;border-radius:15px}
+.cb .duo{width:46px;height:30px;flex:0 0 46px;border-radius:9px;
+  background:linear-gradient(105deg,var(--a) 0 50%,var(--b) 50% 100%);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.16)}
+.cb .c strong{display:block;font-family:'Cormorant Garamond',serif;font-size:18.5px;font-weight:500;
+  color:var(--ttl);line-height:1.2}
+.cb .c small{display:block;font-size:11.5px;color:var(--soft2);margin-top:2px}
+.palnote{margin-top:12px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;
+  text-align:center;color:var(--soft);line-height:1.55}
+
 /* vivências */
 .exp{display:flex;flex-direction:column;gap:9px;margin-top:12px}
 .ex{display:flex;align-items:flex-start;gap:13px;padding:15px 16px;border-radius:15px}
@@ -301,6 +343,30 @@ footer .b{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14p
     <div class="pv"><span class="cur">R$</span><span class="num">25</span><span class="cent">,00</span></div>
   </div>
 
+  <div class="sect an" style="--d:.06s"><div class="n">&#127912;</div><h2>A paleta do encontro</h2></div>
+  <div class="surf card an" style="--d:.07s">
+    <p>Venha vestida nas cores do dia. Toque em cada cor para ver <b>como usar</b>.</p>
+  </div>
+
+  <div class="palgrid an" style="--d:.09s">
+    <button class="sw" data-i="0" aria-pressed="true"  style="--c:#F3DFA2"><span class="chip"></span><span class="nm">Amarelo<br>manteiga</span></button>
+    <button class="sw" data-i="1" aria-pressed="false" style="--c:#6E7C4A"><span class="chip"></span><span class="nm">Verde<br>oliva</span></button>
+    <button class="sw" data-i="2" aria-pressed="false" style="--c:#FBF8F1"><span class="chip"></span><span class="nm">Branco</span></button>
+  </div>
+
+  <div class="surf palinfo an" id="palinfo" style="--sel:#F3DFA2;--d:.12s"></div>
+
+  <div class="combos">
+    <div class="surf cb an" style="--d:.15s"><span class="duo" style="--a:#F3DFA2;--b:#6E7C4A"></span>
+      <div class="c"><strong>Manteiga + Oliva</strong><small>A dupla do convite &middot; natural e sofisticada</small></div></div>
+    <div class="surf cb an" style="--d:.18s"><span class="duo" style="--a:#6E7C4A;--b:#FBF8F1"></span>
+      <div class="c"><strong>Oliva + Branco</strong><small>Contraste limpo, elegância imediata</small></div></div>
+    <div class="surf cb an" style="--d:.21s"><span class="duo" style="--a:#F3DFA2;--b:#FBF8F1"></span>
+      <div class="c"><strong>Manteiga + Branco</strong><small>Leve, luminosa e cheia de frescor</small></div></div>
+  </div>
+
+  <p class="palnote an" style="--d:.24s">Não precisa comprar nada novo —<br>use o que você já tem nesses tons.</p>
+
   <div class="sect an" style="--d:.06s"><div class="n">✨</div><h2>O que você vai viver</h2></div>
   <div class="exp">
     <div class="surf ex an" style="--ac:#9CAD77;--d:.08s"><div class="e">🤝</div><div class="c"><strong>Conexão</strong><span>Mulheres se encontrando de verdade, sem máscara</span></div></div>
@@ -381,6 +447,31 @@ footer .b{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14p
     const el=document.getElementById(id);
     if(el) el.addEventListener('click',e=>{e.preventDefault();location.href='index.html?t='+cur();});
   });
+})();
+
+
+/* ---- paleta interativa ---- */
+(function(){
+  const CORES = [
+    { nome:'Amarelo manteiga', hex:'#F3DFA2',
+      txt:'A cor da luz e da leveza. Ilumina o rosto e traz alegria sem pesar. Fica linda em camisas de algodão, blusas de seda, vestidos fluidos e lenços. Se preferir discreta, use só em um detalhe — um lenço, uma bolsa, um brinco.' },
+    { nome:'Verde oliva', hex:'#6E7C4A',
+      txt:'A cor da terra e da folha — a cor de quem frutifica. É sofisticada e combina com todos os tons de pele. Perfeita em alfaiataria, coletes, saias midi, macacões e vestidos de linho. Fica ainda melhor com dourado nos acessórios.' },
+    { nome:'Branco', hex:'#FBF8F1',
+      txt:'A base que ilumina tudo. Calça pantalona, saia longa, camisa ou vestido — o branco deixa as outras duas cores brilharem. Prefira o branco quebrado ou o off-white, que é mais suave e favorece na foto.' }
+  ];
+  const grid = document.querySelectorAll('.sw');
+  const box  = document.getElementById('palinfo');
+  if(!box) return;
+  function mostra(i){
+    const c = CORES[i];
+    box.style.setProperty('--sel', c.hex);
+    box.innerHTML = '<div class="fade"><div class="top"><div class="nome">' + c.nome +
+      '</div><div class="hex">' + c.hex + '</div></div><p class="txt">' + c.txt + '</p></div>';
+    grid.forEach(b => b.setAttribute('aria-pressed', b.dataset.i === String(i)));
+  }
+  grid.forEach(b => b.addEventListener('click', () => mostra(+b.dataset.i)));
+  mostra(0);
 })();
 
 </script>
