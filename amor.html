@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="onix">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teste das Cinco Linguagens do Amor · Reino Church</title>
+<meta name="description" content="Descubra sua linguagem do amor: palavras de afirmação, qualidade de tempo, presentes, gestos de serviço ou toque físico.">
+<meta property="og:title" content="Qual é a sua linguagem do amor?">
+<meta property="og:description" content="Marque as afirmações que combinam com você e descubra como o amor chega até o seu coração.">
+<meta name="theme-color" content="#0B0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+html[data-tema="onix"]{
+  --bg1:#151009; --bg2:#0B0908; --bg3:#070605; --glow2:rgba(120,92,58,.16);
+  --txt:#F7F2E9; --soft:rgba(247,242,233,.64); --soft2:rgba(247,242,233,.42);
+  --gold:#E8D3AC; --gold2:#C4A87C; --gold3:#8E7450;
+  --panel:rgba(255,255,255,.045); --panelH:rgba(255,255,255,.085);
+  --line:rgba(232,211,172,.16); --lineH:rgba(232,211,172,.44); --line2:rgba(232,211,172,.30);
+  --inner:rgba(0,0,0,.26);
+
+  --card:linear-gradient(147deg,#2E2418 0%,#191308 46%,#241B10 100%); --ring:rgba(236,214,172,.34); --ringT:rgba(255,246,228,.20); --ttl:#EFDFBF;
+}
+html[data-tema="vinho"]{
+  --bg1:#25121B; --bg2:#150A10; --bg3:#0C0508; --glow2:rgba(120,32,60,.22);
+  --txt:#F8F1EC; --soft:rgba(248,241,236,.64); --soft2:rgba(248,241,236,.42);
+  --gold:#EBD4AE; --gold2:#C9A87C; --gold3:#94714E;
+  --panel:rgba(255,255,255,.045); --panelH:rgba(255,255,255,.09);
+  --line:rgba(235,212,174,.17); --lineH:rgba(235,212,174,.46); --line2:rgba(235,212,174,.31);
+  --inner:rgba(0,0,0,.28);
+
+  --card:linear-gradient(147deg,#35222D 0%,#1D111A 46%,#2C1B26 100%); --ring:rgba(238,216,178,.34); --ringT:rgba(255,246,230,.20); --ttl:#F1E1C4;
+}
+html[data-tema="noite"]{
+  --bg1:#14203A; --bg2:#0C1222; --bg3:#070A14; --glow2:rgba(30,60,120,.28);
+  --txt:#F4F1EA; --soft:rgba(244,241,234,.64); --soft2:rgba(244,241,234,.42);
+  --gold:#E7D2A8; --gold2:#C6A876; --gold3:#8F7549;
+  --panel:rgba(255,255,255,.05); --panelH:rgba(255,255,255,.095);
+  --line:rgba(231,210,168,.18); --lineH:rgba(231,210,168,.46); --line2:rgba(231,210,168,.33);
+  --inner:rgba(0,0,0,.3);
+
+  --card:linear-gradient(147deg,#1F2C48 0%,#111828 46%,#1B2539 100%); --ring:rgba(233,213,172,.34); --ringT:rgba(255,247,232,.20); --ttl:#EEDFBE;
+}
+html[data-tema="claro"]{
+  --bg1:#FBF6EC; --bg2:#F2E9DA; --bg3:#EADFCB; --glow2:rgba(196,168,124,.18);
+  --txt:#241809; --soft:rgba(36,24,9,.7); --soft2:rgba(36,24,9,.48);
+  --gold:#8A6C42; --gold2:#A8875A; --gold3:#C9AE86;
+  --panel:rgba(255,255,255,.72); --panelH:rgba(255,255,255,.95);
+  --line:rgba(138,108,66,.22); --lineH:rgba(138,108,66,.5); --line2:rgba(138,108,66,.30);
+  --inner:rgba(255,255,255,.6);
+
+  --card:linear-gradient(147deg,#FFFFFF 0%,#FCF8F1 48%,#FFFFFF 100%); --ring:rgba(138,108,66,.34); --ringT:rgba(255,255,255,.9); --ttl:#3A2711;
+}
+/* cores da arte do encontro */
+:root{--sage:#9CAD77;--sageD:#7C8B5E;--azul:#7C97BE;--azulD:#5C769B}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(720px 420px at 50% -6%, rgba(156,173,119,.20), transparent 62%),
+    radial-gradient(640px 500px at 90% 30%, rgba(124,151,190,.18), transparent 62%),
+    linear-gradient(176deg, var(--bg1) 0%, var(--bg2) 46%, var(--bg3) 100%);
+  background-repeat:no-repeat;
+  color:var(--txt);font-family:'Inter',-apple-system,system-ui,sans-serif;line-height:1.6;
+  -webkit-font-smoothing:antialiased;transition:background .5s ease,color .35s ease;
+}
+.wrap{width:100%;max-width:470px;margin:0 auto;padding:24px 20px 44px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.an{opacity:0;animation:rise .62s cubic-bezier(.22,.8,.3,1) forwards;animation-delay:var(--d,0s)}
+
+.back{display:inline-flex;align-items:center;gap:9px;padding:9px 16px 9px 12px;border-radius:100px;
+  background:var(--panel);border:1px solid var(--line2);text-decoration:none;color:var(--soft);
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.back span{font-size:14px;line-height:1;color:var(--gold2)}
+
+.hero{text-align:center;margin-top:26px}
+.kicker{font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--sage);font-weight:700;padding-left:.36em}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:47px;line-height:1;margin-top:12px;
+  background:linear-gradient(102deg,#C9D6A6 4%,var(--sage) 34%,#DCE6C4 60%,var(--sageD) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+h1 em{display:block;font-style:italic;font-weight:400;font-size:44px;margin-top:2px;
+  background:linear-gradient(102deg,#BFD2EC 6%,var(--azul) 42%,#D5E2F3 72%,var(--azulD) 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-tema="claro"] h1{background:linear-gradient(102deg,#6F8050,#8A9B67 60%,#6F8050);
+  -webkit-background-clip:text;background-clip:text}
+html[data-tema="claro"] h1 em{background:linear-gradient(102deg,#4C6386,#6B85AC 60%,#4C6386);
+  -webkit-background-clip:text;background-clip:text}
+.lead{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;
+  color:var(--soft);margin-top:16px;line-height:1.55;max-width:330px;margin-left:auto;margin-right:auto}
+.orn{display:flex;align-items:center;justify-content:center;gap:13px;margin:18px 0 0}
+.orn i{height:1px;width:56px;background:linear-gradient(90deg,transparent,var(--sageD));display:block}
+.orn i+i{background:linear-gradient(90deg,var(--sageD),transparent)}
+.orn b{color:var(--sage);font-size:14px;font-weight:400}
+
+.flyer{margin-top:24px;border-radius:20px;overflow:hidden;border:1px solid var(--line2);
+  box-shadow:0 26px 60px -34px rgba(0,0,0,.95);line-height:0}
+.flyer img{width:100%;display:block}
+
+.sect{display:flex;align-items:center;gap:12px;margin:32px 0 13px}
+.sect .n{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;
+  font-size:14px;line-height:1;border:1px solid rgba(156,173,119,.45);background:rgba(156,173,119,.12)}
+.sect h2{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:500;color:var(--gold);line-height:1.2;flex:1}
+
+.surf{border:none;border-radius:18px;position:relative;overflow:hidden;background:var(--card);
+  box-shadow:inset 0 0 0 1px var(--ring), inset 0 1px 0 var(--ringT), 0 16px 34px -26px rgba(0,0,0,.95)}
+.surf::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(116deg,transparent 26%,rgba(255,246,228,.05) 47%,transparent 64%)}
+html[data-tema="claro"] .surf::after{background:linear-gradient(116deg,transparent 26%,rgba(138,108,66,.045) 47%,transparent 64%)}
+.surf::before{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--lineH),transparent);opacity:.6}
+.card{padding:20px}
+.card p{font-family:'Cormorant Garamond',serif;font-size:18.5px;font-weight:300;line-height:1.62;color:var(--soft)}
+.card p+p{margin-top:12px}
+.card p b{color:var(--sage);font-weight:500}
+html[data-tema="claro"] .card p b{color:var(--sageD)}
+
+/* detalhes */
+.info{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.inf{display:flex;align-items:center;gap:14px;padding:15px 16px;border-radius:15px}
+.inf::after{content:"";position:absolute;left:0;top:18%;bottom:18%;width:3px;border-radius:0 4px 4px 0;
+  background:linear-gradient(180deg,transparent,var(--ac),transparent);opacity:.95}
+.inf .ic{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--acL);background:radial-gradient(circle at 32% 26%, var(--acB), var(--inner))}
+.inf .ic svg{width:18px;height:18px;stroke:var(--ac);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.inf .c{flex:1;min-width:0}
+.inf .c span{display:block;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft2);font-weight:700}
+.inf .c strong{color:var(--ttl);display:block;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;line-height:1.24;margin-top:3px}
+.inf .c small{display:block;font-size:11.5px;color:var(--soft2);margin-top:2px}
+
+
+.inf.mapa{text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease}
+.inf.mapa:active{transform:scale(.985)}
+@media(hover:hover){.inf.mapa:hover{border-color:rgba(156,173,119,.6)}}
+.inf .c small{line-height:1.55}
+.inf .c .go{display:inline-block;font-style:normal;font-size:9px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;color:var(--sage);margin-top:9px}
+html[data-tema="claro"] .inf .c .go{color:var(--sageD)}
+
+
+
+/* ---------- página linguagem do amor ---------- */
+.hero2{text-align:center;margin-top:22px}
+.hero2 .kick{font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:var(--sage);font-weight:800}
+.hero2 h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:40px;line-height:1.06;margin-top:12px;
+  background:linear-gradient(102deg,#E8D3AC 4%,var(--gold2) 36%,#F1E2C6 62%,var(--gold3) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero2 h1 em{display:block;font-style:italic;font-weight:400;font-size:37px;margin-top:2px;
+  background:linear-gradient(102deg,#E9AFCE 6%,#C87FA8 44%,#EFC3DC 74%,#A6628F 98%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero2 .lead{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;
+  color:var(--soft);margin-top:14px;line-height:1.55;max-width:330px;margin-left:auto;margin-right:auto}
+
+.contbar{position:sticky;top:8px;z-index:20;display:flex;align-items:center;gap:11px;
+  padding:11px 15px;border-radius:100px;margin:14px 0 12px;
+  background:rgba(10,8,6,.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:inset 0 0 0 1px var(--ring), 0 12px 26px -18px rgba(0,0,0,.9)}
+html[data-tema="claro"] .contbar{background:rgba(255,255,255,.92)}
+.contbar .lbl{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft2);font-weight:700}
+.oculta .contbar{display:none}
+.contbar .cnt{margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--gold);font-weight:600}
+
+.lista{display:flex;flex-direction:column;gap:7px}
+.it{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:14px;cursor:pointer;
+  transition:transform .16s ease, box-shadow .2s ease}
+.it:active{transform:scale(.99)}
+.it .bx{width:24px;height:24px;flex:0 0 24px;border-radius:7px;border:1.5px solid var(--line2);
+  display:grid;place-items:center;transition:all .18s ease}
+.it .bx svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;
+  opacity:0;transform:scale(.6);transition:all .18s ease}
+.it .tx{flex:1;font-size:14px;line-height:1.5;color:var(--soft)}
+.it.on .bx{background:var(--pc);border-color:transparent;box-shadow:0 5px 14px -6px var(--pc)}
+.it.on .bx svg{opacity:1;transform:scale(1)}
+.it.on .tx{color:var(--ttl)}
+.it.on{box-shadow:inset 0 0 0 1px var(--pc), 0 12px 26px -22px var(--pc)}
+
+.rank{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.rk .rh{display:flex;align-items:center;gap:9px;margin-bottom:5px}
+.rk .ri{font-size:15px;line-height:1}
+.rk .rn{flex:1;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ttl)}
+.rk .rv{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;color:var(--c)}
+.rk .rt{height:9px;border-radius:100px;background:var(--inner);overflow:hidden}
+.rk .rf{height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,var(--c),var(--c2));
+  transition:width .9s cubic-bezier(.22,.8,.3,1)}
+/* aplicações do resultado */
+.apl{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.ap{padding:16px 17px;border-radius:16px;position:relative;overflow:hidden;
+  background:var(--inner);border:1px solid var(--line2)}
+html[data-tema="claro"] .ap{background:rgba(255,255,255,.78)}
+.ap::after{content:"";position:absolute;left:0;top:16%;bottom:16%;width:3px;border-radius:0 4px 4px 0;background:var(--pc)}
+.ap .h{display:flex;align-items:center;gap:10px}
+.ap .h .e{font-size:16px;line-height:1}
+.ap .h strong{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--ttl)}
+.ap p{font-size:13px;line-height:1.68;color:var(--soft);margin-top:7px}
+.qual{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.qual span{padding:8px 13px;border-radius:100px;font-size:12px;font-weight:600;color:var(--ttl);
+  border:1px solid var(--pcl);background:var(--pcb)}
+.subt{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold2);
+  font-weight:800;margin-top:22px;text-align:center}
+
+.fonte{margin-top:18px;text-align:center;font-size:10px;letter-spacing:.08em;color:var(--soft2);line-height:1.7}
+/* ---------- teste de perfil comportamental ---------- */
+.tstwrap{margin-top:12px}
+.tstbar{position:sticky;top:8px;z-index:20;display:flex;align-items:center;gap:11px;
+  padding:11px 14px;border-radius:100px;margin-bottom:12px;
+  background:rgba(10,8,6,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:inset 0 0 0 1px var(--ring), 0 12px 26px -18px rgba(0,0,0,.9)}
+html[data-tema="claro"] .tstbar{background:rgba(255,255,255,.9)}
+.tstbar .lbl{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft2);font-weight:700;white-space:nowrap}
+.tstbar .trk{flex:1;height:5px;border-radius:100px;background:var(--inner);overflow:hidden}
+.tstbar .fil{height:100%;width:0;border-radius:100px;transition:width .35s ease;
+  background:linear-gradient(90deg,var(--sage),var(--gold))}
+.tstwrap.fim .tstbar{display:none}
+.tstbar .cnt{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);font-weight:600;white-space:nowrap}
+
+.blk{padding:16px 16px 14px;border-radius:17px;margin-bottom:10px}
+.blk .bh{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding-bottom:11px;margin-bottom:6px;border-bottom:1px dashed var(--line2)}
+.blk .bn{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:800}
+.blk .bs{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft2);font-weight:600}
+.blk.done .bs{color:var(--sage)}
+.row{display:flex;align-items:center;gap:9px;padding:7px 0}
+.row+.row{border-top:1px solid rgba(255,255,255,.045)}
+html[data-tema="claro"] .row+.row{border-top:1px solid rgba(36,24,9,.07)}
+.row .wd{flex:1;min-width:0;font-family:'Cormorant Garamond',serif;font-size:18.5px;font-weight:500;
+  line-height:1.25;color:var(--ttl)}
+.row .opts{display:flex;gap:5px;flex:0 0 auto}
+.row .opt{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;padding:0;
+  background:transparent;color:var(--soft2);
+  border:1px solid var(--line2);
+  transition:transform .16s ease, background .16s ease, color .16s ease, opacity .16s ease}
+.row .opt:active{transform:scale(.9)}
+.row .opt.sel{background:linear-gradient(140deg,var(--sage),var(--sageD));color:#fff;
+  border-color:transparent;transform:scale(1.08);
+  box-shadow:0 6px 16px -8px var(--sage)}
+.row .opt.usado{opacity:.16}
+.row .opt:disabled{cursor:not-allowed}
+.row .opt:disabled:active{transform:none}
+.row.ok .wd{color:var(--gold)}
+
+.tstgo{width:100%;margin-top:6px;padding:17px;border-radius:17px;border:none;cursor:pointer;
+  font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--onGold,#1B140A);
+  background:linear-gradient(102deg,#E8D3AC,#C4A87C 55%,#A98C63);
+  box-shadow:0 18px 38px -22px rgba(196,168,124,.9);transition:opacity .25s ease, transform .2s ease}
+.tstgo:disabled{opacity:.4;cursor:default;box-shadow:none}
+.tstgo:not(:disabled):active{transform:scale(.985)}
+
+/* resultado */
+.res{margin-top:12px;padding:24px 20px;border-radius:20px;position:relative;overflow:hidden;
+  border:1px solid rgba(156,173,119,.34);
+  background:linear-gradient(155deg,rgba(156,173,119,.16),rgba(124,151,190,.05))}
+.res .k{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);font-weight:800;text-align:center}
+.res .big{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;text-align:center;
+  margin-top:8px;line-height:1.1;color:var(--ttl)}
+.res .sub{text-align:center;font-size:12.5px;color:var(--soft);margin-top:7px;line-height:1.5}
+.bars{margin-top:20px;display:flex;flex-direction:column;gap:11px}
+.bar .bt{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px}
+.bar .bnm{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ttl)}
+.bar .bvl{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--c)}
+.bar .btk{height:9px;border-radius:100px;background:var(--inner);overflow:hidden}
+.bar .bfl{height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,var(--c),var(--c2));
+  transition:width .9s cubic-bezier(.22,.8,.3,1)}
+.res .tot{text-align:center;font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--soft2);margin-top:16px;font-weight:700}
+.res .desc{margin-top:18px;padding:17px;border-radius:15px;background:var(--inner);
+  border:1px solid var(--line2)}
+html[data-tema="claro"] .res .desc{background:rgba(255,255,255,.75)}
+.res .desc h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--gold);margin-bottom:7px}
+.res .desc p{font-size:13.5px;line-height:1.65;color:var(--soft)}
+.res .verso{margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;
+  text-align:center;line-height:1.55;color:var(--soft)}
+.res .acoes{display:flex;flex-direction:column;gap:9px;margin-top:18px}
+.res .acoes a,.res .acoes button{display:flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px;border-radius:14px;text-decoration:none;font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.res .acoes .wapp{background:linear-gradient(104deg,#128C4B,#1EB35C 52%,#0F7F44);color:#fff}
+.res .acoes .again{background:transparent;color:var(--soft);border:1px solid var(--line2)}
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back an" href="mulheres.html" style="--d:.02s"><span>&#8592;</span> Mulheres Frutíferas</a>
+
+  <div class="hero2">
+    <div class="kick an" style="--d:.06s">Mulheres Frutíferas &middot; Reino Church</div>
+    <h1 class="an" style="--d:.1s">linguagens<em>do amor</em></h1>
+    <p class="lead an" style="--d:.16s">Cada coração recebe amor de um jeito. Descubra o seu.</p>
+    <div class="orn an" style="--d:.2s"><i></i><b>&#10047;</b><i></i></div>
+  </div>
+
+  <div class="surf card an" style="margin-top:20px;--d:.24s">
+    <p>Leia cada frase e <b>marque as que se parecem com você</b>. Não tem limite: marque quantas quiser, sem pensar demais. No fim, contamos quantas vezes cada linguagem apareceu.</p>
+  </div>
+
+  <div class="contbar an" style="--d:.28s">
+    <span class="lbl">Marque as que combinam com você</span>
+    <span class="cnt" id="cnt">0 marcadas</span>
+  </div>
+
+  <div class="lista an" id="lista" style="--d:.3s"></div>
+
+  <button class="tstgo" id="go" style="margin-top:14px" disabled>Ver minha linguagem</button>
+  <div id="res"></div>
+
+  <p class="fonte">Baseado no conceito das Cinco Linguagens do Amor.<br>Material do treinamento da Dra. Gleyce Santana.</p>
+
+  <a class="voltar" href="perfil.html" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;padding:15px;border-radius:15px;text-decoration:none;background:var(--panel);border:1px solid var(--line2);color:var(--soft);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Fazer o teste de perfil comportamental &#10230;</a>
+
+  <footer>
+    <span class="c">&#10047;</span>
+    <div class="a">Mulheres Frutíferas &middot; Igreja Reino Church &middot; Goiânia – GO</div>
+    <div class="b">Juntas, somos frutíferas</div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const LING = [
+    { l:'A', nome:'Palavras de Afirmação', ic:'&#128172;', c:'#D9A03C', c2:'#A8741F',
+      tr:'Você se sente amada quando escuta. Um elogio sincero, um "obrigado", um "que orgulho de você" enchem o seu tanque mais do que qualquer presente. Do mesmo jeito, uma palavra dura fere você mais fundo do que as pessoas imaginam.',
+      marido:'Diga a ele o que você precisa ouvir — homens costumam achar que já ficou claro. E faça o mesmo por ele: reconheça em voz alta o que ele fez, não só o que faltou fazer.',
+      filhos:'Elogie o caráter, não só o resultado: "você foi honesta", "você não desistiu". Isso constrói identidade. Corrija em particular e elogie na frente dos outros.',
+      amigos:'Mande a mensagem que você pensou e não enviou. Sua palavra tem poder de levantar alguém que está no chão — e você faz isso naturalmente.' },
+
+    { l:'B', nome:'Qualidade de Tempo', ic:'&#9203;', c:'#6E8F5A', c2:'#4C6A3C',
+      tr:'Para você, amor se soletra atenção. Não é a quantidade de horas, é a qualidade: olho no olho, celular longe, ninguém com pressa. Você se sente amada quando alguém para o mundo para estar com você.',
+      marido:'Peça o encontro sem pauta: sem resolver contas, sem falar de filhos. Vinte minutos de conversa de verdade valem mais para você do que um presente caro.',
+      filhos:'Cada filho precisa do seu tempo exclusivo, mesmo que seja pouco. Quinze minutos só com ele, sem irmãos e sem telefone, marcam mais do que um passeio de dia inteiro com todos juntos.',
+      amigos:'Você é a amiga que escuta até o fim. Cuide para que também escutem você — peça esse espaço, não espere que ofereçam.' },
+
+    { l:'C', nome:'Presentes', ic:'&#127873;', c:'#B85C4A', c2:'#8E4232',
+      tr:'Não é materialismo: é o símbolo. Um presente prova que alguém pensou em você quando você não estava por perto. O tamanho não importa — o que importa é a lembrança que ele carrega.',
+      marido:'Explique a ele que a flor de dez reais comprada porque lembrou de você vale mais que o jantar caro de obrigação. Ele precisa entender que é o gesto, não o preço.',
+      filhos:'Guarde os bilhetinhos e as lembrancinhas que eles fazem — e diga que guardou. Ensine a eles que presentear é lembrar, e não gastar.',
+      amigos:'Você é a que lembra dos aniversários e leva um mimo sem motivo. Deixe as pessoas saberem que receber também alegra você.' },
+
+    { l:'D', nome:'Gestos de Serviço', ic:'&#129309;', c:'#4E7BA5', c2:'#33587C',
+      tr:'Para você, o que a pessoa faz fala mais alto do que o que ela diz. Amor é louça lavada, é carona no dia corrido, é alguém que resolve sem você precisar pedir duas vezes.',
+      marido:'Peça ajuda específica, sem rodeio — "hoje eu precisava que você desse banho neles" funciona melhor do que esperar que ele perceba. E reconheça quando ele faz.',
+      filhos:'Ensine que servir é amar, dando pequenas tarefas e agradecendo por elas. Cuidado só para não fazer tudo por eles: ajudar demais rouba o aprendizado.',
+      amigos:'Você é a que aparece com comida quando alguém adoece. Aceite ajuda também — deixar alguém servir você é um presente que você dá a ela.' },
+
+    { l:'E', nome:'Toque Físico', ic:'&#129505;', c:'#A6628F', c2:'#7B4269',
+      tr:'O abraço, a mão dada, o carinho no braço ao passar: é assim que o amor chega até você. O toque acalma seu coração e traz segurança de um jeito que as palavras não alcançam.',
+      marido:'Toque sem que seja sempre prelúdio de algo. A mão dada no sofá e o abraço na cozinha sustentam o casamento tanto quanto a intimidade.',
+      filhos:'Abrace todos os dias, inclusive os adolescentes que fingem não querer. O colo que você dá hoje é a segurança que eles vão levar para a vida inteira.',
+      amigos:'Um abraço apertado seu diz o que uma hora de conversa não diria. Respeite quem não é de toque — e ensine que, para você, é assim que o amor chega.' }
+  ];
+
+  const ITENS = [
+    ['A','Gosto de receber palavras de afirmação.'],
+    ['E','Gosto de ser abraçada.'],
+    ['B','Gosto de passar tempo a sós com alguém especial para mim.'],
+    ['D','Sinto-me amada quando alguém me oferece ajuda prática.'],
+    ['C','Gosto quando me dão presentes.'],
+    ['B','Gosto de visitas sem pressa com amigos e entes queridos.'],
+    ['D','Sinto-me amada quando as pessoas fazem coisas para ajudar-me.'],
+    ['E','Sinto-me amada quando as pessoas me tocam.'],
+    ['E','Sinto-me amada quando alguém que amo ou admiro me rodeia com o braço.'],
+    ['C','Sinto-me amada quando recebo um presente de alguém que amo e admiro.'],
+    ['B','Gosto de sair com amigos e entes queridos.'],
+    ['E','Gosto de bater palma com palma ou ficar de mãos dadas com pessoas especiais para mim.'],
+    ['C','Símbolos visíveis de amor (presentes) são importantes para mim.'],
+    ['A','Sinto-me amada quando as pessoas me afirmam.'],
+    ['B','Gosto de sentar perto das pessoas a quem aprecio.'],
+    ['A','Gosto de que me digam que sou atraente.'],
+    ['B','Gosto de passar tempo com amigos e entes queridos.'],
+    ['C','Gosto de receber presentinhos de amigos e entes queridos.'],
+    ['A','Palavras de aceitação são importantes para mim.'],
+    ['D','Sei que alguém me ama quando ele ou ela me ajuda.'],
+    ['B','Gosto de estar junto e fazer coisas com amigos e entes queridos.'],
+    ['A','Gosto quando me dizem palavras bondosas.'],
+    ['D','O que a pessoa faz me afeta mais que aquilo que ela diz.'],
+    ['E','Os abraços me fazem sentir participante e apreciada.'],
+    ['A','Aprecio o louvor e tento evitar as críticas.'],
+    ['C','Vários presentes pequenos significam mais para mim que um grande.'],
+    ['B','Sinto-me íntima de alguém quando estamos conversando ou fazendo coisas juntos.'],
+    ['E','Sinto-me mais perto dos amigos e entes queridos quando eles me tocam com frequência.'],
+    ['A','Gosto de que as pessoas elogiem minhas realizações.'],
+    ['D','Sei que as pessoas me amam quando fazem coisas para mim que por si mesmas não fariam.'],
+    ['E','Gosto de ser tocada quando amigos e entes queridos passam perto de mim.'],
+    ['B','Gosto quando as pessoas me ouvem e mostram interesse genuíno no que estou dizendo.'],
+    ['D','Sinto-me amada quando amigos e entes queridos me ajudam em trabalhos e projetos.'],
+    ['C','Gosto realmente de receber presentes de amigos e entes queridos.'],
+    ['A','Gosto que as pessoas elogiem minha aparência.'],
+    ['B','Sinto-me amada quando as pessoas tomam tempo para entender meus sentimentos.'],
+    ['E','Sinto-me segura quando uma pessoa especial toca em mim.'],
+    ['D','Atos de serviço fazem com que me sinta amada.'],
+    ['D','Aprecio as muitas coisas que pessoas especiais fazem para mim.'],
+    ['C','Gosto de receber presentes que pessoas especiais fazem para mim.'],
+    ['B','Aprecio realmente o sentimento que tenho quando alguém me dá total atenção.'],
+    ['D','Aprecio realmente o sentimento que tenho quando alguém me presta algum ato de serviço.'],
+    ['C','Sinto-me amada quando uma pessoa comemora meu aniversário com um presente.'],
+    ['A','Sinto-me amada quando uma pessoa comemora meu aniversário com palavras significativas.'],
+    ['C','Sei o que a pessoa está pensando de mim quando me dá um presente.'],
+    ['D','Sinto-me amada quando a pessoa me ajuda nas tarefas diárias.'],
+    ['B','Aprecio quando alguém me ouve com paciência e não me interrompe.'],
+    ['C','Aprecio quando alguém lembra de dias especiais com um presente.'],
+    ['D','Gosto de saber que os entes queridos estão preocupados em ajudar-me nas tarefas diárias.'],
+    ['B','Gosto de fazer viagens longas com alguém que é especial para mim.'],
+    ['E','Gosto de beijar ou ser beijada por pessoas de minha intimidade.'],
+    ['C','Receber presentes sem qualquer razão especial me deixa contente.'],
+    ['A','Gosto que me digam que sou querida.'],
+    ['B','Gosto que a pessoa olhe para mim enquanto falamos.'],
+    ['C','Presentes de um amigo ou ente querido são sempre especiais para mim.'],
+    ['E','Sinto-me bem quando um amigo ou ente querido me toca.'],
+    ['D','Sinto-me amada quando alguém faz com entusiasmo o que pedi.'],
+    ['A','Sinto-me amada quando dizem o quanto me apreciam.'],
+    ['E','Preciso ser tocada todos os dias.'],
+    ['A','Preciso de palavras de afirmação todos os dias.']
+  ];
+
+  const cont = document.getElementById('lista');
+  const cnt  = document.getElementById('cnt');
+  const go   = document.getElementById('go');
+  const resBox = document.getElementById('res');
+  const cor = {}; LING.forEach(x=>cor[x.l]=x.c);
+  const marc = new Set();
+
+  cont.innerHTML = ITENS.map((it,i)=>`
+    <div class="surf it" data-i="${i}" data-l="${it[0]}" style="--pc:${cor[it[0]]}">
+      <span class="bx"><svg viewBox="0 0 24 24"><path d="M4 12.5l5.2 5.2L20 7"/></svg></span>
+      <span class="tx">${it[1]}</span>
+    </div>`).join('');
+
+  function atualiza(){
+    cnt.textContent = marc.size + ' marcadas';
+    go.disabled = marc.size < 5;
+  }
+  cont.addEventListener('click', e=>{
+    const el = e.target.closest('.it'); if(!el) return;
+    const i = +el.dataset.i;
+    if(marc.has(i)){ marc.delete(i); el.classList.remove('on'); }
+    else { marc.add(i); el.classList.add('on'); }
+    atualiza();
+  });
+  atualiza();
+
+  go.addEventListener('click', ()=>{
+    const soma = {A:0,B:0,C:0,D:0,E:0};
+    marc.forEach(i=>{ soma[ITENS[i][0]]++; });
+    const ord = LING.map(x=>({x, v:soma[x.l]})).sort((a,b)=>b.v-a.v);
+    const top = ord[0].x, maxv = Math.max(1, ord[0].v);
+
+    const msg = `Fiz o Teste das Cinco Linguagens do Amor 💛\n\n${ord.map(o=>`${o.v} — ${o.x.nome}`).join('\n')}\n\nMinha principal linguagem: ${top.nome}`;
+    const wa = 'https://wa.me/5562991458080?text=' + encodeURIComponent(msg);
+
+    resBox.innerHTML = `
+      <div class="res">
+        <div class="k">Sua principal linguagem do amor</div>
+        <div class="big">${top.ic} ${top.nome}</div>
+        <div class="sub">${marc.size} afirmações marcadas</div>
+        <div class="rank">
+          ${ord.map(o=>`
+            <div class="rk" style="--c:${o.x.c};--c2:${o.x.c2}">
+              <div class="rh"><span class="ri">${o.x.ic}</span><span class="rn">${o.x.nome}</span><span class="rv">${o.v}</span></div>
+              <div class="rt"><div class="rf" data-p="${Math.round(o.v/maxv*100)}"></div></div>
+            </div>`).join('')}
+        </div>
+        <div class="desc"><h4>O que isso diz sobre você</h4><p>${top.tr}</p></div>
+        <div class="subt">Como isso muda os seus relacionamentos</div>
+        <div class="apl" style="--pc:${top.c}">
+          <div class="ap"><div class="h"><span class="e">&#128141;</span><strong>Com o seu marido</strong></div><p>${top.marido}</p></div>
+          <div class="ap"><div class="h"><span class="e">&#129333;</span><strong>Com os seus filhos</strong></div><p>${top.filhos}</p></div>
+          <div class="ap"><div class="h"><span class="e">&#129309;</span><strong>Com as suas amigas</strong></div><p>${top.amigos}</p></div>
+        </div>
+        <div class="verso">"Amemos, não de palavra nem de língua,<br>mas por obras e em verdade."<br><span style="font-style:normal;font-size:9px;letter-spacing:.24em;color:var(--soft2)">1 JOÃO 3:18</span></div>
+        <div class="acoes">
+          <a class="wapp" href="${wa}" target="_blank" rel="noopener">Enviar meu resultado</a>
+          <button class="again" type="button" id="again">Refazer o teste</button>
+        </div>
+      </div>`;
+    document.body.classList.add('oculta');
+    requestAnimationFrame(()=>{
+      resBox.querySelectorAll('.rf').forEach(b=>{ b.style.width = b.dataset.p+'%'; });
+      resBox.querySelector('.res').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    document.getElementById('again').addEventListener('click', ()=>{
+      document.body.classList.remove('oculta');
+      marc.clear(); cont.querySelectorAll('.it').forEach(e=>e.classList.remove('on'));
+      atualiza(); resBox.innerHTML=''; cont.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
