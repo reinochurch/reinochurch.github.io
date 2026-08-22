@@ -251,7 +251,9 @@ html[data-tema="claro"] .row+.row{border-top:1px solid rgba(36,24,9,.07)}
 .row .opt.sel{background:linear-gradient(140deg,var(--sage),var(--sageD));color:#fff;
   border-color:transparent;transform:scale(1.08);
   box-shadow:0 6px 16px -8px var(--sage)}
-.row .opt.usado{opacity:.24}
+.row .opt.usado{opacity:.16}
+.row .opt:disabled{cursor:not-allowed}
+.row .opt:disabled:active{transform:none}
 .row.ok .wd{color:var(--gold)}
 
 .tstgo{width:100%;margin-top:6px;padding:17px;border-radius:17px;border:none;cursor:pointer;
@@ -655,13 +657,16 @@ footer .b{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14p
       row.classList.toggle('ok', meu!==null);
       row.querySelectorAll('.opt').forEach(op=>{
         const n = +op.dataset.n;
+        const bloqueado = (meu!==n && usados.includes(n));
         op.classList.toggle('sel', meu===n);
-        op.classList.toggle('usado', meu!==n && usados.includes(n));
+        op.classList.toggle('usado', bloqueado);
+        op.disabled = bloqueado;
       });
     });
     const completo = usados.length===4;
     blk.classList.toggle('done', completo);
-    blk.querySelector(`.bs[data-st="${bi}"]`).textContent = completo ? 'Concluído' : `${usados.length} de 4`;
+    const faltam = NUMS.filter(n=>!usados.includes(n));
+    blk.querySelector(`.bs[data-st="${bi}"]`).textContent = completo ? 'Concluído' : 'Faltam ' + faltam.join(' · ');
   }
 
   function atualiza(){
