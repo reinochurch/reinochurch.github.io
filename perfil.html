@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="onix">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teste de Perfil Comportamental · Reino Church</title>
+<meta name="description" content="Teste de Perfil Comportamental do Mulheres Frutíferas — descubra se você é Executora, Comunicadora, Planejadora ou Analista e como isso transforma seus relacionamentos.">
+<meta property="og:title" content="Qual é o seu perfil comportamental?">
+<meta property="og:description" content="10 blocos, 3 minutos. Descubra seu perfil e como aplicar em casa, com os filhos e no trabalho.">
+<meta name="theme-color" content="#0B0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+html[data-tema="onix"]{
+  --bg1:#151009; --bg2:#0B0908; --bg3:#070605; --glow2:rgba(120,92,58,.16);
+  --txt:#F7F2E9; --soft:rgba(247,242,233,.64); --soft2:rgba(247,242,233,.42);
+  --gold:#E8D3AC; --gold2:#C4A87C; --gold3:#8E7450;
+  --panel:rgba(255,255,255,.045); --panelH:rgba(255,255,255,.085);
+  --line:rgba(232,211,172,.16); --lineH:rgba(232,211,172,.44); --line2:rgba(232,211,172,.30);
+  --inner:rgba(0,0,0,.26);
+
+  --card:linear-gradient(147deg,#2E2418 0%,#191308 46%,#241B10 100%); --ring:rgba(236,214,172,.34); --ringT:rgba(255,246,228,.20); --ttl:#EFDFBF;
+}
+html[data-tema="vinho"]{
+  --bg1:#25121B; --bg2:#150A10; --bg3:#0C0508; --glow2:rgba(120,32,60,.22);
+  --txt:#F8F1EC; --soft:rgba(248,241,236,.64); --soft2:rgba(248,241,236,.42);
+  --gold:#EBD4AE; --gold2:#C9A87C; --gold3:#94714E;
+  --panel:rgba(255,255,255,.045); --panelH:rgba(255,255,255,.09);
+  --line:rgba(235,212,174,.17); --lineH:rgba(235,212,174,.46); --line2:rgba(235,212,174,.31);
+  --inner:rgba(0,0,0,.28);
+
+  --card:linear-gradient(147deg,#35222D 0%,#1D111A 46%,#2C1B26 100%); --ring:rgba(238,216,178,.34); --ringT:rgba(255,246,230,.20); --ttl:#F1E1C4;
+}
+html[data-tema="noite"]{
+  --bg1:#14203A; --bg2:#0C1222; --bg3:#070A14; --glow2:rgba(30,60,120,.28);
+  --txt:#F4F1EA; --soft:rgba(244,241,234,.64); --soft2:rgba(244,241,234,.42);
+  --gold:#E7D2A8; --gold2:#C6A876; --gold3:#8F7549;
+  --panel:rgba(255,255,255,.05); --panelH:rgba(255,255,255,.095);
+  --line:rgba(231,210,168,.18); --lineH:rgba(231,210,168,.46); --line2:rgba(231,210,168,.33);
+  --inner:rgba(0,0,0,.3);
+
+  --card:linear-gradient(147deg,#1F2C48 0%,#111828 46%,#1B2539 100%); --ring:rgba(233,213,172,.34); --ringT:rgba(255,247,232,.20); --ttl:#EEDFBE;
+}
+html[data-tema="claro"]{
+  --bg1:#FBF6EC; --bg2:#F2E9DA; --bg3:#EADFCB; --glow2:rgba(196,168,124,.18);
+  --txt:#241809; --soft:rgba(36,24,9,.7); --soft2:rgba(36,24,9,.48);
+  --gold:#8A6C42; --gold2:#A8875A; --gold3:#C9AE86;
+  --panel:rgba(255,255,255,.72); --panelH:rgba(255,255,255,.95);
+  --line:rgba(138,108,66,.22); --lineH:rgba(138,108,66,.5); --line2:rgba(138,108,66,.30);
+  --inner:rgba(255,255,255,.6);
+
+  --card:linear-gradient(147deg,#FFFFFF 0%,#FCF8F1 48%,#FFFFFF 100%); --ring:rgba(138,108,66,.34); --ringT:rgba(255,255,255,.9); --ttl:#3A2711;
+}
+/* cores da arte do encontro */
+:root{--sage:#9CAD77;--sageD:#7C8B5E;--azul:#7C97BE;--azulD:#5C769B}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(720px 420px at 50% -6%, rgba(156,173,119,.20), transparent 62%),
+    radial-gradient(640px 500px at 90% 30%, rgba(124,151,190,.18), transparent 62%),
+    linear-gradient(176deg, var(--bg1) 0%, var(--bg2) 46%, var(--bg3) 100%);
+  background-repeat:no-repeat;
+  color:var(--txt);font-family:'Inter',-apple-system,system-ui,sans-serif;line-height:1.6;
+  -webkit-font-smoothing:antialiased;transition:background .5s ease,color .35s ease;
+}
+.wrap{width:100%;max-width:470px;margin:0 auto;padding:24px 20px 44px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.an{opacity:0;animation:rise .62s cubic-bezier(.22,.8,.3,1) forwards;animation-delay:var(--d,0s)}
+
+.back{display:inline-flex;align-items:center;gap:9px;padding:9px 16px 9px 12px;border-radius:100px;
+  background:var(--panel);border:1px solid var(--line2);text-decoration:none;color:var(--soft);
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.back span{font-size:14px;line-height:1;color:var(--gold2)}
+
+.hero{text-align:center;margin-top:26px}
+.kicker{font-size:9px;letter-spacing:.36em;text-transform:uppercase;color:var(--sage);font-weight:700;padding-left:.36em}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:47px;line-height:1;margin-top:12px;
+  background:linear-gradient(102deg,#C9D6A6 4%,var(--sage) 34%,#DCE6C4 60%,var(--sageD) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+h1 em{display:block;font-style:italic;font-weight:400;font-size:44px;margin-top:2px;
+  background:linear-gradient(102deg,#BFD2EC 6%,var(--azul) 42%,#D5E2F3 72%,var(--azulD) 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-tema="claro"] h1{background:linear-gradient(102deg,#6F8050,#8A9B67 60%,#6F8050);
+  -webkit-background-clip:text;background-clip:text}
+html[data-tema="claro"] h1 em{background:linear-gradient(102deg,#4C6386,#6B85AC 60%,#4C6386);
+  -webkit-background-clip:text;background-clip:text}
+.lead{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;
+  color:var(--soft);margin-top:16px;line-height:1.55;max-width:330px;margin-left:auto;margin-right:auto}
+.orn{display:flex;align-items:center;justify-content:center;gap:13px;margin:18px 0 0}
+.orn i{height:1px;width:56px;background:linear-gradient(90deg,transparent,var(--sageD));display:block}
+.orn i+i{background:linear-gradient(90deg,var(--sageD),transparent)}
+.orn b{color:var(--sage);font-size:14px;font-weight:400}
+
+.flyer{margin-top:24px;border-radius:20px;overflow:hidden;border:1px solid var(--line2);
+  box-shadow:0 26px 60px -34px rgba(0,0,0,.95);line-height:0}
+.flyer img{width:100%;display:block}
+
+.sect{display:flex;align-items:center;gap:12px;margin:32px 0 13px}
+.sect .n{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;
+  font-size:14px;line-height:1;border:1px solid rgba(156,173,119,.45);background:rgba(156,173,119,.12)}
+.sect h2{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:500;color:var(--gold);line-height:1.2;flex:1}
+
+.surf{border:none;border-radius:18px;position:relative;overflow:hidden;background:var(--card);
+  box-shadow:inset 0 0 0 1px var(--ring), inset 0 1px 0 var(--ringT), 0 16px 34px -26px rgba(0,0,0,.95)}
+.surf::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(116deg,transparent 26%,rgba(255,246,228,.05) 47%,transparent 64%)}
+html[data-tema="claro"] .surf::after{background:linear-gradient(116deg,transparent 26%,rgba(138,108,66,.045) 47%,transparent 64%)}
+.surf::before{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--lineH),transparent);opacity:.6}
+.card{padding:20px}
+.card p{font-family:'Cormorant Garamond',serif;font-size:18.5px;font-weight:300;line-height:1.62;color:var(--soft)}
+.card p+p{margin-top:12px}
+.card p b{color:var(--sage);font-weight:500}
+html[data-tema="claro"] .card p b{color:var(--sageD)}
+
+/* detalhes */
+.info{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.inf{display:flex;align-items:center;gap:14px;padding:15px 16px;border-radius:15px}
+.inf::after{content:"";position:absolute;left:0;top:18%;bottom:18%;width:3px;border-radius:0 4px 4px 0;
+  background:linear-gradient(180deg,transparent,var(--ac),transparent);opacity:.95}
+.inf .ic{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--acL);background:radial-gradient(circle at 32% 26%, var(--acB), var(--inner))}
+.inf .ic svg{width:18px;height:18px;stroke:var(--ac);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.inf .c{flex:1;min-width:0}
+.inf .c span{display:block;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft2);font-weight:700}
+.inf .c strong{color:var(--ttl);display:block;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;line-height:1.24;margin-top:3px}
+.inf .c small{display:block;font-size:11.5px;color:var(--soft2);margin-top:2px}
+
+
+.inf.mapa{text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease}
+.inf.mapa:active{transform:scale(.985)}
+@media(hover:hover){.inf.mapa:hover{border-color:rgba(156,173,119,.6)}}
+.inf .c small{line-height:1.55}
+.inf .c .go{display:inline-block;font-style:normal;font-size:9px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;color:var(--sage);margin-top:9px}
+html[data-tema="claro"] .inf .c .go{color:var(--sageD)}
+
+
+
+/* ---------- página do teste ---------- */
+.hero2{text-align:center;margin-top:22px}
+.hero2 .kick{font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:var(--sage);font-weight:800}
+.hero2 h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:40px;line-height:1.06;margin-top:12px;
+  background:linear-gradient(102deg,#C9D6A6 4%,var(--sage) 34%,#DCE6C4 60%,var(--sageD) 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero2 h1 em{display:block;font-style:italic;font-weight:400;font-size:36px;margin-top:2px;
+  background:linear-gradient(102deg,#F0E0BC 6%,var(--gold) 42%,#F3E6C9 72%,var(--gold3) 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero2 .lead{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;font-style:italic;
+  color:var(--soft);margin-top:14px;line-height:1.55;max-width:330px;margin-left:auto;margin-right:auto}
+.como{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.como .p{display:flex;gap:12px;padding:13px 15px;border-radius:14px;align-items:flex-start}
+.como .p .nn{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;flex:0 0 26px;
+  text-align:center;line-height:1;background:linear-gradient(140deg,var(--sage),var(--sageD));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.como .p .cc strong{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ttl);line-height:1.2}
+.como .p .cc span{display:block;font-size:12.5px;color:var(--soft2);margin-top:3px;line-height:1.55}
+
+/* aplicações do resultado */
+.apl{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.ap{padding:16px 17px;border-radius:16px;position:relative;overflow:hidden;
+  background:var(--inner);border:1px solid var(--line2)}
+html[data-tema="claro"] .ap{background:rgba(255,255,255,.78)}
+.ap::after{content:"";position:absolute;left:0;top:16%;bottom:16%;width:3px;border-radius:0 4px 4px 0;background:var(--pc)}
+.ap .h{display:flex;align-items:center;gap:10px}
+.ap .h .e{font-size:16px;line-height:1}
+.ap .h strong{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--ttl)}
+.ap p{font-size:13px;line-height:1.68;color:var(--soft);margin-top:7px}
+.qual{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.qual span{padding:8px 13px;border-radius:100px;font-size:12px;font-weight:600;color:var(--ttl);
+  border:1px solid var(--pcl);background:var(--pcb)}
+.subt{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold2);
+  font-weight:800;margin-top:22px;text-align:center}
+.voltar{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;padding:15px;
+  border-radius:15px;text-decoration:none;background:var(--panel);border:1px solid var(--line2);
+  color:var(--soft);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+/* ---------- teste de perfil comportamental ---------- */
+.tstwrap{margin-top:12px}
+.tstbar{position:sticky;top:8px;z-index:20;display:flex;align-items:center;gap:11px;
+  padding:11px 14px;border-radius:100px;margin-bottom:12px;
+  background:rgba(10,8,6,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:inset 0 0 0 1px var(--ring), 0 12px 26px -18px rgba(0,0,0,.9)}
+html[data-tema="claro"] .tstbar{background:rgba(255,255,255,.9)}
+.tstbar .lbl{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft2);font-weight:700;white-space:nowrap}
+.tstbar .trk{flex:1;height:5px;border-radius:100px;background:var(--inner);overflow:hidden}
+.tstbar .fil{height:100%;width:0;border-radius:100px;transition:width .35s ease;
+  background:linear-gradient(90deg,var(--sage),var(--gold))}
+.tstwrap.fim .tstbar{display:none}
+.tstbar .cnt{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);font-weight:600;white-space:nowrap}
+
+.blk{padding:16px 16px 14px;border-radius:17px;margin-bottom:10px}
+.blk .bh{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding-bottom:11px;margin-bottom:6px;border-bottom:1px dashed var(--line2)}
+.blk .bn{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:800}
+.blk .bs{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft2);font-weight:600}
+.blk.done .bs{color:var(--sage)}
+.row{display:flex;align-items:center;gap:9px;padding:7px 0}
+.row+.row{border-top:1px solid rgba(255,255,255,.045)}
+html[data-tema="claro"] .row+.row{border-top:1px solid rgba(36,24,9,.07)}
+.row .wd{flex:1;min-width:0;font-family:'Cormorant Garamond',serif;font-size:18.5px;font-weight:500;
+  line-height:1.25;color:var(--ttl)}
+.row .opts{display:flex;gap:5px;flex:0 0 auto}
+.row .opt{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;padding:0;
+  background:transparent;color:var(--soft2);
+  border:1px solid var(--line2);
+  transition:transform .16s ease, background .16s ease, color .16s ease, opacity .16s ease}
+.row .opt:active{transform:scale(.9)}
+.row .opt.sel{background:linear-gradient(140deg,var(--sage),var(--sageD));color:#fff;
+  border-color:transparent;transform:scale(1.08);
+  box-shadow:0 6px 16px -8px var(--sage)}
+.row .opt.usado{opacity:.16}
+.row .opt:disabled{cursor:not-allowed}
+.row .opt:disabled:active{transform:none}
+.row.ok .wd{color:var(--gold)}
+
+.tstgo{width:100%;margin-top:6px;padding:17px;border-radius:17px;border:none;cursor:pointer;
+  font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--onGold,#1B140A);
+  background:linear-gradient(102deg,#E8D3AC,#C4A87C 55%,#A98C63);
+  box-shadow:0 18px 38px -22px rgba(196,168,124,.9);transition:opacity .25s ease, transform .2s ease}
+.tstgo:disabled{opacity:.4;cursor:default;box-shadow:none}
+.tstgo:not(:disabled):active{transform:scale(.985)}
+
+/* resultado */
+.res{margin-top:12px;padding:24px 20px;border-radius:20px;position:relative;overflow:hidden;
+  border:1px solid rgba(156,173,119,.34);
+  background:linear-gradient(155deg,rgba(156,173,119,.16),rgba(124,151,190,.05))}
+.res .k{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);font-weight:800;text-align:center}
+.res .big{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;text-align:center;
+  margin-top:8px;line-height:1.1;color:var(--ttl)}
+.res .sub{text-align:center;font-size:12.5px;color:var(--soft);margin-top:7px;line-height:1.5}
+.bars{margin-top:20px;display:flex;flex-direction:column;gap:11px}
+.bar .bt{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px}
+.bar .bnm{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ttl)}
+.bar .bvl{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--c)}
+.bar .btk{height:9px;border-radius:100px;background:var(--inner);overflow:hidden}
+.bar .bfl{height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,var(--c),var(--c2));
+  transition:width .9s cubic-bezier(.22,.8,.3,1)}
+.res .tot{text-align:center;font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--soft2);margin-top:16px;font-weight:700}
+.res .desc{margin-top:18px;padding:17px;border-radius:15px;background:var(--inner);
+  border:1px solid var(--line2)}
+html[data-tema="claro"] .res .desc{background:rgba(255,255,255,.75)}
+.res .desc h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--gold);margin-bottom:7px}
+.res .desc p{font-size:13.5px;line-height:1.65;color:var(--soft)}
+.res .verso{margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;
+  text-align:center;line-height:1.55;color:var(--soft)}
+.res .acoes{display:flex;flex-direction:column;gap:9px;margin-top:18px}
+.res .acoes a,.res .acoes button{display:flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px;border-radius:14px;text-decoration:none;font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.res .acoes .wapp{background:linear-gradient(104deg,#128C4B,#1EB35C 52%,#0F7F44);color:#fff}
+.res .acoes .again{background:transparent;color:var(--soft);border:1px solid var(--line2)}
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back an" href="mulheres.html" style="--d:.02s"><span>&#8592;</span> Mulheres Frutíferas</a>
+
+  <div class="hero2">
+    <div class="kick an" style="--d:.06s">Mulheres Frutíferas &middot; Reino Church</div>
+    <h1 class="an" style="--d:.1s">perfil<em>comportamental</em></h1>
+    <p class="lead an" style="--d:.16s">Autoconhecimento que transforma relacionamentos e gera frutos.</p>
+    <div class="orn an" style="--d:.2s"><i></i><b>&#10047;</b><i></i></div>
+  </div>
+
+  <div class="surf card an" style="margin-top:20px;--d:.24s">
+    <p>São <b>10 blocos</b>. Em cada um, distribua <b>4, 3, 2 e 1</b> entre as quatro palavras, sem repetir nenhum número. O <b>4</b> vai para a palavra que mais tem a ver com você; o <b>1</b>, para a que menos combina.</p>
+  </div>
+
+  <div class="como an" style="--d:.28s">
+    <div class="surf p"><span class="nn">1</span><span class="cc"><strong>Responda pensando em você</strong><span>Não existe resposta certa ou errada — existe a sua verdade.</span></span></div>
+    <div class="surf p"><span class="nn">2</span><span class="cc"><strong>Não pense demais</strong><span>A primeira reação costuma ser a mais sincera.</span></span></div>
+    <div class="surf p"><span class="nn">3</span><span class="cc"><strong>O total sempre fecha em 100</strong><span>Cada bloco vale 10 pontos. Dez blocos, 100 pontos.</span></span></div>
+  </div>
+
+  <div class="tstwrap an" style="--d:.32s">
+    <div class="tstbar">
+      <span class="lbl">Progresso</span>
+      <span class="trk"><span class="fil" id="tstFil"></span></span>
+      <span class="cnt" id="tstCnt">0/10</span>
+    </div>
+    <div id="tstBlocos"></div>
+    <button class="tstgo" id="tstGo" disabled>Ver o meu perfil</button>
+    <div id="tstRes"></div>
+  </div>
+
+  <a class="voltar" href="mulheres.html">&#8592; Voltar para o encontro</a>
+
+  <footer>
+    <span class="c">&#10047;</span>
+    <div class="a">Mulheres Frutíferas &middot; Igreja Reino Church &middot; Goiânia – GO</div>
+    <div class="b">Juntas, somos frutíferas</div>
+  </footer>
+</div>
+
+<script>
+/* ================= TESTE DE PERFIL COMPORTAMENTAL ================= */
+(function(){
+  const PERFIS = [
+    { nome:'Executora', c:'#B85C4A', c2:'#8E4232', cl:'rgba(184,92,74,.4)', cb:'rgba(184,92,74,.14)',
+      tr:'Auto confiante, dominante, aceita e gosta de desafios, competitiva e audaciosa, destemida e corajosa. É extrovertida e movida por resultados: decide rápido, encara o que ninguém quer encarar e abre caminho para as outras.',
+      quals:['Coragem','Determinação','Iniciativa','Foco em resultado','Decisão rápida','Liderança natural'],
+      cuidado:'Impaciência com o ritmo dos outros. Respire antes de responder — nem todo mundo corre na sua velocidade, e isso não é falta de compromisso.',
+      marido:'Você é direta e resolve rápido, e às vezes isso chega como cobrança. Troque o "faz assim" pelo "o que você acha?". Reserve momentos sem pauta, em que nada precisa ser resolvido — ele precisa sentir que é seu parceiro, não mais um item da sua lista.',
+      filhos:'Seus filhos admiram sua força, mas precisam de colo tanto quanto de direção. Diminua o ritmo na hora de escutar: pergunte antes de corrigir. Elogie o esforço, e não só o resultado — assim eles aprendem a ousar sem medo de errar.',
+      clientes:'Sua objetividade transmite segurança e fecha negócio. O cuidado é com a pressa: nem todo cliente decide no seu tempo. Apresente primeiro o resultado, depois o caminho, e abra espaço para a pergunta dele antes de concluir.',
+      colegas:'Você puxa a equipe para a frente. Delegue explicando o porquê, e não só o quê — pessoas se comprometem com o motivo. Reconhecer publicamente quem entregou multiplica seu resultado muito mais do que cobrar.' },
+
+    { nome:'Comunicadora', c:'#E0B34A', c2:'#B4862A', cl:'rgba(224,179,74,.4)', cb:'rgba(224,179,74,.14)',
+      tr:'Comunicativa, persuasiva, entusiasmada, otimista e se relaciona com facilidade. É extrovertida e movida por pessoas: aproxima, anima o ambiente e tem o dom de fazer os outros acreditarem.',
+      quals:['Entusiasmo','Persuasão','Otimismo','Acolhimento','Inspiração','Facilidade de relacionamento'],
+      cuidado:'Dispersão. Você começa muita coisa animada — escolha menos e termine. Concluir o pequeno combinado é o que dá peso à sua palavra.',
+      marido:'Você fala e ele nem sempre responde no mesmo volume, e isso não é desinteresse. Crie conversas sem plateia e escute até o fim antes de emendar. Seu entusiasmo é um presente para o casamento quando vem acompanhado de escuta.',
+      filhos:'Sua casa é leve e seus filhos crescem certos de que são amados. Cuidado só com as promessas feitas na empolgação: cumpra o pequeno combinado. Firmeza com carinho é o que faz eles confiarem na sua palavra.',
+      clientes:'Ninguém cria vínculo como você. Depois do encanto, mande por escrito o que ficou combinado — prazo, valor, próximo passo. É isso que transforma simpatia em contrato e evita mal-entendido.',
+      colegas:'Você melhora o clima de qualquer equipe. Use esse dom para dar voz aos mais quietos e para mediar conflitos antes que cresçam. Evite prometer no impulso do entusiasmo: confirme prazo e números antes de dizer sim.' },
+
+    { nome:'Planejadora', c:'#6E8F5A', c2:'#4C6A3C', cl:'rgba(110,143,90,.42)', cb:'rgba(110,143,90,.14)',
+      tr:'Estável, paciente, calma, de ritmo consistente e conservadora. É a que acolhe, escuta e sustenta: constrói vínculos duradouros e traz segurança para quem está por perto.',
+      quals:['Paciência','Estabilidade','Escuta','Lealdade','Constância','Acolhimento'],
+      cuidado:'Dificuldade com mudanças e com dizer não. Peça tempo para se adaptar, mas não recuse o novo — e fale o que sente antes que vire mágoa.',
+      marido:'Você é o porto seguro da casa. Mas quem acolhe demais costuma engolir o que sente. Diga o que precisa antes de virar mágoa: ele não adivinha. Sua paciência vira intimidade de verdade quando vem junto com sinceridade.',
+      filhos:'Seus filhos encontram em você a segurança que o mundo não dá. Mantenha a rotina e o colo, e trabalhe o "não" sem culpa — limite também é amor. Sua constância é o que forma o caráter deles no silêncio do dia a dia.',
+      clientes:'O cliente confia em você porque você não pressiona, e isso fideliza como poucas coisas. Só não deixe de apresentar sua proposta com convicção: o que você entrega tem valor, e dizer isso não é vender demais.',
+      colegas:'Você é a pessoa em quem todos se apoiam. Cuidado para não carregar o que não é seu. Aprender a dizer "hoje não consigo" protege seu limite e mantém a qualidade da sua entrega no longo prazo.' },
+
+    { nome:'Analista', c:'#4E7BA5', c2:'#33587C', cl:'rgba(78,123,165,.42)', cb:'rgba(78,123,165,.14)',
+      tr:'Precisa, atenta aos detalhes, diligente, organizada e autodisciplinada. Pensa antes de agir, cuida da qualidade e enxerga o que passa despercebido para os outros.',
+      quals:['Precisão','Organização','Disciplina','Critério','Atenção aos detalhes','Compromisso com a qualidade'],
+      cuidado:'Perfeccionismo. Feito e bem feito é melhor do que perfeito e atrasado — e a régua alta demais afasta quem ama você.',
+      marido:'Você enxerga o que precisa melhorar e às vezes fala isso antes de dizer o que já está bom. Comece pelo elogio. Ele precisa se sentir aceito, não avaliado. Cuidar é a sua linguagem de amor — explique isso a ele, porque nem sempre é óbvio.',
+      filhos:'Sua casa tem ordem e seus filhos crescem com referência clara. O cuidado é com a régua alta: eles precisam de espaço para errar e sujar as mãos. Elogie o processo, não só o acerto, para que não cresçam com medo de falhar.',
+      clientes:'Sua entrega é impecável e isso constrói reputação. Traduza o técnico para a linguagem do cliente e não atrase por perfeccionismo: o cliente valoriza mais o prazo cumprido com qualidade do que o detalhe que só você enxerga.',
+      colegas:'Você é quem percebe o detalhe que salva o projeto. Traga a crítica sempre junto com a solução, e reconheça o que a equipe fez bem antes de apontar o ajuste. Assim seu critério vira contribuição, e não cobrança.' }
+  ];
+  /* cada bloco: 4 palavras, na ordem Executora | Comunicadora | Planejadora | Analista */
+  const BLOCOS = [
+    ['Autoconfiante','Comunicativa','Estável','Precisa'],
+    ['Dominante','Persuasiva','Paciente','Atenta aos detalhes'],
+    ['Competitiva','Entusiasmada','Calma','Diligente'],
+    ['Audaciosa','Otimista','Conservadora','Organizada'],
+    ['Destemida','Se relaciona com facilidade','Ritmo consistente','Autodisciplinada'],
+    ['Desbravadora','Influenciadora','Acolhedora','Observadora'],
+    ['Impulsionadora','Estimuladora','Prevenida','Ordenada'],
+    ['Direcionadora','Articuladora','Metódica','Criteriosa'],
+    ['Solucionadora','Participativa','Moderadora','Especialista'],
+    ['Empreendedora','Facilitadora','Estabilizadora','Idealizadora']
+  ];
+  const NUMS = [4,3,2,1];
+
+  const cont = document.getElementById('tstBlocos');
+  const go   = document.getElementById('tstGo');
+  const fil  = document.getElementById('tstFil');
+  const cnt  = document.getElementById('tstCnt');
+  const resBox = document.getElementById('tstRes');
+  if(!cont) return;
+
+  const resp = BLOCOS.map(()=>[null,null,null,null]); // valor escolhido por linha
+
+  cont.innerHTML = BLOCOS.map((b,bi)=>`
+    <div class="surf blk" data-b="${bi}">
+      <div class="bh"><span class="bn">Bloco ${bi+1} de 10</span><span class="bs" data-st="${bi}">4 &middot; 3 &middot; 2 &middot; 1</span></div>
+      ${b.map((p,pi)=>`
+        <div class="row" data-b="${bi}" data-p="${pi}">
+          <div class="wd">${p}</div>
+          <div class="opts">${NUMS.map(n=>`<button class="opt" data-n="${n}" type="button">${n}</button>`).join('')}</div>
+        </div>`).join('')}
+    </div>`).join('');
+
+  function pintaBloco(bi){
+    const blk = cont.querySelector(`.blk[data-b="${bi}"]`);
+    const usados = resp[bi].filter(v=>v!==null);
+    blk.querySelectorAll('.row').forEach(row=>{
+      const pi = +row.dataset.p;
+      const meu = resp[bi][pi];
+      row.classList.toggle('ok', meu!==null);
+      row.querySelectorAll('.opt').forEach(op=>{
+        const n = +op.dataset.n;
+        const bloqueado = (meu!==n && usados.includes(n));
+        op.classList.toggle('sel', meu===n);
+        op.classList.toggle('usado', bloqueado);
+        op.disabled = bloqueado;
+      });
+    });
+    const completo = usados.length===4;
+    blk.classList.toggle('done', completo);
+    const faltam = NUMS.filter(n=>!usados.includes(n));
+    blk.querySelector(`.bs[data-st="${bi}"]`).textContent = completo ? 'Concluído' : 'Faltam ' + faltam.join(' · ');
+  }
+
+  function atualiza(){
+    const prontos = resp.filter(r=>r.filter(v=>v!==null).length===4).length;
+    fil.style.width = (prontos/BLOCOS.length*100)+'%';
+    cnt.textContent = prontos+'/10';
+    go.disabled = prontos<BLOCOS.length;
+  }
+
+  cont.addEventListener('click', e=>{
+    const op = e.target.closest('.opt');
+    if(!op) return;
+    const row = op.closest('.row');
+    const bi = +row.dataset.b, pi = +row.dataset.p, n = +op.dataset.n;
+    if(resp[bi][pi]===n){ resp[bi][pi]=null; }        // toca de novo = desmarca
+    else {
+      const antes = resp[bi].indexOf(n);              // ninguém repete o número
+      if(antes>-1) resp[bi][antes]=null;
+      resp[bi][pi]=n;
+    }
+    pintaBloco(bi); atualiza();
+  });
+
+  BLOCOS.forEach((_,i)=>pintaBloco(i));
+  atualiza();
+
+  go.addEventListener('click', ()=>{
+    const tot = [0,0,0,0];
+    resp.forEach(r=>r.forEach((v,i)=>{ tot[i]+= (v||0); }));
+    const soma = tot.reduce((a,b)=>a+b,0);
+    const ord = tot.map((v,i)=>({v, i})).sort((a,b)=>b.v-a.v || a.i-b.i);
+    const top = PERFIS[ord[0].i];
+
+    const linha = ord.map(o=>`${o.v} ${PERFIS[o.i].nome}`).join(' · ');
+    const msg = `Fiz o Teste de Perfil Comportamental do Mulheres Frutíferas 🌿\n\nMeu resultado:\n${ord.map(o=>`${o.v} pontos — ${PERFIS[o.i].nome}`).join('\n')}\n\nTotal: ${soma} pontos\nPerfil predominante: ${top.nome}`;
+    const wa = 'https://wa.me/5562991458080?text=' + encodeURIComponent(msg);
+
+    resBox.innerHTML = `
+      <div class="res">
+        <div class="k">Seu perfil predominante</div>
+        <div class="big">${top.nome}</div>
+        <div class="sub">${linha}</div>
+        <div class="bars">
+          ${ord.map(o=>`
+            <div class="bar" style="--c:${PERFIS[o.i].c};--c2:${PERFIS[o.i].c2}">
+              <div class="bt"><span class="bnm">${PERFIS[o.i].nome}</span><span class="bvl">${o.v}</span></div>
+              <div class="btk"><div class="bfl" data-w="${o.v}"></div></div>
+            </div>`).join('')}
+        </div>
+        <div class="tot">Total: ${soma} pontos</div>
+        <div class="desc"><h4>O que isso diz sobre você</h4><p>${top.tr}</p></div>
+
+        <div class="subt">Suas qualidades</div>
+        <div class="qual" style="--pcl:${top.cl};--pcb:${top.cb}">${top.quals.map(q=>`<span>${q}</span>`).join('')}</div>
+
+        <div class="subt">Como aplicar no dia a dia</div>
+        <div class="apl" style="--pc:${top.c}">
+          <div class="ap"><div class="h"><span class="e">&#128141;</span><strong>Com o seu marido</strong></div><p>${top.marido}</p></div>
+          <div class="ap"><div class="h"><span class="e">&#129333;</span><strong>Com os seus filhos</strong></div><p>${top.filhos}</p></div>
+          <div class="ap"><div class="h"><span class="e">&#129309;</span><strong>Com os seus clientes</strong></div><p>${top.clientes}</p></div>
+          <div class="ap"><div class="h"><span class="e">&#128188;</span><strong>Com os colegas de trabalho</strong></div><p>${top.colegas}</p></div>
+          <div class="ap" style="--pc:var(--gold2)"><div class="h"><span class="e">&#10047;</span><strong>Seu ponto de atenção</strong></div><p>${top.cuidado}</p></div>
+        </div>
+
+        <div class="subt">Plano prático para todos os dias</div>
+        <div class="como" style="margin-top:12px">
+          <div class="surf p"><span class="nn">1</span><span class="cc"><strong>Observe</strong><span>Perceba como cada pessoa ao seu redor reage às situações.</span></span></div>
+          <div class="surf p"><span class="nn">2</span><span class="cc"><strong>Escute</strong><span>Escuta com atenção e sem julgamento gera conexão e confiança.</span></span></div>
+          <div class="surf p"><span class="nn">3</span><span class="cc"><strong>Identifique</strong><span>Reconheça o perfil predominante de quem está com você.</span></span></div>
+          <div class="surf p"><span class="nn">4</span><span class="cc"><strong>Ajuste</strong><span>Adapte sua linguagem, seu tom e o seu ritmo a cada pessoa.</span></span></div>
+          <div class="surf p"><span class="nn">5</span><span class="cc"><strong>Aplique</strong><span>Pequenas mudanças no dia a dia geram grandes resultados.</span></span></div>
+        </div>
+        <div class="verso">"Deus nos fez diferentes e únicos<br>para que juntas possamos frutificar onde formos."</div>
+        <div class="acoes">
+          <a class="wapp" href="${wa}" target="_blank" rel="noopener">Enviar meu resultado</a>
+          <button class="again" type="button" id="tstAgain">Refazer o teste</button>
+        </div>
+      </div>`;
+    document.querySelector('.tstwrap').classList.add('fim');
+    requestAnimationFrame(()=>{
+      resBox.querySelectorAll('.bfl').forEach(b=>{ b.style.width = (b.dataset.w/50*100)+'%'; });
+      resBox.querySelector('.res').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    document.getElementById('tstAgain').addEventListener('click', ()=>{
+      document.querySelector('.tstwrap').classList.remove('fim');
+      resp.forEach(r=>r.fill(null));
+      BLOCOS.forEach((_,i)=>pintaBloco(i));
+      atualiza(); resBox.innerHTML='';
+      cont.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+})();
+</script>
+</body>
+</html>

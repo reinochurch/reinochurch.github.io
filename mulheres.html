@@ -216,84 +216,6 @@ html[data-tema="claro"] .inf .c .go{color:var(--sageD)}
   margin-top:10px;font-weight:800}
 
 
-/* ---------- teste de perfil comportamental ---------- */
-.tstwrap{margin-top:12px}
-.tstbar{position:sticky;top:8px;z-index:20;display:flex;align-items:center;gap:11px;
-  padding:11px 14px;border-radius:100px;margin-bottom:12px;
-  background:rgba(10,8,6,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  box-shadow:inset 0 0 0 1px var(--ring), 0 12px 26px -18px rgba(0,0,0,.9)}
-html[data-tema="claro"] .tstbar{background:rgba(255,255,255,.9)}
-.tstbar .lbl{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft2);font-weight:700;white-space:nowrap}
-.tstbar .trk{flex:1;height:5px;border-radius:100px;background:var(--inner);overflow:hidden}
-.tstbar .fil{height:100%;width:0;border-radius:100px;transition:width .35s ease;
-  background:linear-gradient(90deg,var(--sage),var(--gold))}
-.tstwrap.fim .tstbar{display:none}
-.tstbar .cnt{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);font-weight:600;white-space:nowrap}
-
-.blk{padding:16px 16px 14px;border-radius:17px;margin-bottom:10px}
-.blk .bh{display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding-bottom:11px;margin-bottom:6px;border-bottom:1px dashed var(--line2)}
-.blk .bn{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:800}
-.blk .bs{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft2);font-weight:600}
-.blk.done .bs{color:var(--sage)}
-.row{display:flex;align-items:center;gap:9px;padding:7px 0}
-.row+.row{border-top:1px solid rgba(255,255,255,.045)}
-html[data-tema="claro"] .row+.row{border-top:1px solid rgba(36,24,9,.07)}
-.row .wd{flex:1;min-width:0;font-family:'Cormorant Garamond',serif;font-size:18.5px;font-weight:500;
-  line-height:1.25;color:var(--ttl)}
-.row .opts{display:flex;gap:5px;flex:0 0 auto}
-.row .opt{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
-  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;padding:0;
-  background:transparent;color:var(--soft2);
-  border:1px solid var(--line2);
-  transition:transform .16s ease, background .16s ease, color .16s ease, opacity .16s ease}
-.row .opt:active{transform:scale(.9)}
-.row .opt.sel{background:linear-gradient(140deg,var(--sage),var(--sageD));color:#fff;
-  border-color:transparent;transform:scale(1.08);
-  box-shadow:0 6px 16px -8px var(--sage)}
-.row .opt.usado{opacity:.16}
-.row .opt:disabled{cursor:not-allowed}
-.row .opt:disabled:active{transform:none}
-.row.ok .wd{color:var(--gold)}
-
-.tstgo{width:100%;margin-top:6px;padding:17px;border-radius:17px;border:none;cursor:pointer;
-  font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--onGold,#1B140A);
-  background:linear-gradient(102deg,#E8D3AC,#C4A87C 55%,#A98C63);
-  box-shadow:0 18px 38px -22px rgba(196,168,124,.9);transition:opacity .25s ease, transform .2s ease}
-.tstgo:disabled{opacity:.4;cursor:default;box-shadow:none}
-.tstgo:not(:disabled):active{transform:scale(.985)}
-
-/* resultado */
-.res{margin-top:12px;padding:24px 20px;border-radius:20px;position:relative;overflow:hidden;
-  border:1px solid rgba(156,173,119,.34);
-  background:linear-gradient(155deg,rgba(156,173,119,.16),rgba(124,151,190,.05))}
-.res .k{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);font-weight:800;text-align:center}
-.res .big{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;text-align:center;
-  margin-top:8px;line-height:1.1;color:var(--ttl)}
-.res .sub{text-align:center;font-size:12.5px;color:var(--soft);margin-top:7px;line-height:1.5}
-.bars{margin-top:20px;display:flex;flex-direction:column;gap:11px}
-.bar .bt{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:5px}
-.bar .bnm{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--ttl)}
-.bar .bvl{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--c)}
-.bar .btk{height:9px;border-radius:100px;background:var(--inner);overflow:hidden}
-.bar .bfl{height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,var(--c),var(--c2));
-  transition:width .9s cubic-bezier(.22,.8,.3,1)}
-.res .tot{text-align:center;font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--soft2);margin-top:16px;font-weight:700}
-.res .desc{margin-top:18px;padding:17px;border-radius:15px;background:var(--inner);
-  border:1px solid var(--line2)}
-html[data-tema="claro"] .res .desc{background:rgba(255,255,255,.75)}
-.res .desc h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--gold);margin-bottom:7px}
-.res .desc p{font-size:13.5px;line-height:1.65;color:var(--soft)}
-.res .verso{margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;
-  text-align:center;line-height:1.55;color:var(--soft)}
-.res .acoes{display:flex;flex-direction:column;gap:9px;margin-top:18px}
-.res .acoes a,.res .acoes button{display:flex;align-items:center;justify-content:center;gap:9px;
-  padding:14px;border-radius:14px;text-decoration:none;font-size:12px;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:none;font-family:'Inter',sans-serif}
-.res .acoes .wapp{background:linear-gradient(104deg,#128C4B,#1EB35C 52%,#0F7F44);color:#fff}
-.res .acoes .again{background:transparent;color:var(--soft);border:1px solid var(--line2)}
-
 /* alerta vagas */
 .alert{margin-top:14px;padding:22px 20px;border-radius:20px;text-align:center;position:relative;overflow:hidden;
   border:1px solid rgba(156,173,119,.36);
@@ -488,19 +410,13 @@ footer .b{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14p
 
   <div class="sect an" style="--d:.06s"><div class="n">&#10047;</div><h2>Teste de Perfil Comportamental</h2></div>
   <div class="surf card an" style="--d:.07s">
-    <p>Autoconhecimento que transforma relacionamentos e gera frutos. São <b>10 blocos</b> — em cada um, distribua <b>4, 3, 2 e 1</b> entre as quatro palavras, sem repetir. O 4 vai para a que <b>mais</b> tem a ver com você.</p>
+    <p>Antes do encontro, descubra o seu perfil: <b>Executora, Comunicadora, Planejadora ou Analista</b>. São 10 blocos, leva uns 3 minutos, e no fim você recebe como aplicar isso com o seu marido, os seus filhos, os seus clientes e a sua equipe.</p>
   </div>
-
-  <div class="tstwrap an" style="--d:.09s">
-    <div class="tstbar">
-      <span class="lbl">Progresso</span>
-      <span class="trk"><span class="fil" id="tstFil"></span></span>
-      <span class="cnt" id="tstCnt">0/10</span>
-    </div>
-    <div id="tstBlocos"></div>
-    <button class="tstgo" id="tstGo" disabled>Ver o meu perfil</button>
-    <div id="tstRes"></div>
-  </div>
+  <a class="btn ghost an" href="perfil.html" style="--d:.09s">
+    <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.2l7.4 2.9v5.2c0 4.3-3 8.2-7.4 9.5-4.4-1.3-7.4-5.2-7.4-9.5V6.1z"/><path d="M9.4 12.1l1.9 1.9 3.5-3.6"/></svg></div>
+    <div class="txt"><div class="t">Fazer o teste agora</div><div class="s">10 blocos &middot; resultado na hora</div></div>
+    <div class="arw">&#10230;</div>
+  </a>
 
   <div class="sect an" style="--d:.06s"><div class="n">&#10047;</div><h2>Quem conduz</h2></div>
   <div class="lead-card an" style="--d:.08s">
@@ -602,142 +518,7 @@ footer .b{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14p
 })();
 
 
-/* ================= TESTE DE PERFIL COMPORTAMENTAL ================= */
-(function(){
-  const PERFIS = [
-    { nome:'Executora',    c:'#B85C4A', c2:'#8E4232',
-      tr:'Auto confiante, dominante, aceita e gosta de desafios, competitiva e audaciosa, destemida e corajosa. É extrovertida e movida por resultados: decide rápido, encara o que ninguém quer encarar e abre caminho para as outras.' },
-    { nome:'Comunicadora', c:'#E0B34A', c2:'#B4862A',
-      tr:'Comunicativa, persuasiva, entusiasmada, otimista e se relaciona com facilidade. É extrovertida e movida por pessoas: aproxima, anima o ambiente e tem o dom de fazer os outros acreditarem.' },
-    { nome:'Planejadora',  c:'#6E8F5A', c2:'#4C6A3C',
-      tr:'Estável, paciente, calma, de ritmo consistente e conservadora. É a que acolhe, escuta e sustenta: constrói vínculos duradouros e traz segurança para quem está por perto.' },
-    { nome:'Analista',     c:'#4E7BA5', c2:'#33587C',
-      tr:'Precisa, atenta aos detalhes, diligente, organizada e autodisciplinada. Pensa antes de agir, cuida da qualidade e enxerga o que passa despercebido para os outros.' }
-  ];
-  /* cada bloco: 4 palavras, na ordem Executora | Comunicadora | Planejadora | Analista */
-  const BLOCOS = [
-    ['Autoconfiante','Comunicativa','Estável','Precisa'],
-    ['Dominante','Persuasiva','Paciente','Atenta aos detalhes'],
-    ['Competitiva','Entusiasmada','Calma','Diligente'],
-    ['Audaciosa','Otimista','Conservadora','Organizada'],
-    ['Destemida','Se relaciona com facilidade','Ritmo consistente','Autodisciplinada'],
-    ['Desbravadora','Influenciadora','Acolhedora','Observadora'],
-    ['Impulsionadora','Estimuladora','Prevenida','Ordenada'],
-    ['Direcionadora','Articuladora','Metódica','Criteriosa'],
-    ['Solucionadora','Participativa','Moderadora','Especialista'],
-    ['Empreendedora','Facilitadora','Estabilizadora','Idealizadora']
-  ];
-  const NUMS = [4,3,2,1];
 
-  const cont = document.getElementById('tstBlocos');
-  const go   = document.getElementById('tstGo');
-  const fil  = document.getElementById('tstFil');
-  const cnt  = document.getElementById('tstCnt');
-  const resBox = document.getElementById('tstRes');
-  if(!cont) return;
-
-  const resp = BLOCOS.map(()=>[null,null,null,null]); // valor escolhido por linha
-
-  cont.innerHTML = BLOCOS.map((b,bi)=>`
-    <div class="surf blk" data-b="${bi}">
-      <div class="bh"><span class="bn">Bloco ${bi+1} de 10</span><span class="bs" data-st="${bi}">4 &middot; 3 &middot; 2 &middot; 1</span></div>
-      ${b.map((p,pi)=>`
-        <div class="row" data-b="${bi}" data-p="${pi}">
-          <div class="wd">${p}</div>
-          <div class="opts">${NUMS.map(n=>`<button class="opt" data-n="${n}" type="button">${n}</button>`).join('')}</div>
-        </div>`).join('')}
-    </div>`).join('');
-
-  function pintaBloco(bi){
-    const blk = cont.querySelector(`.blk[data-b="${bi}"]`);
-    const usados = resp[bi].filter(v=>v!==null);
-    blk.querySelectorAll('.row').forEach(row=>{
-      const pi = +row.dataset.p;
-      const meu = resp[bi][pi];
-      row.classList.toggle('ok', meu!==null);
-      row.querySelectorAll('.opt').forEach(op=>{
-        const n = +op.dataset.n;
-        const bloqueado = (meu!==n && usados.includes(n));
-        op.classList.toggle('sel', meu===n);
-        op.classList.toggle('usado', bloqueado);
-        op.disabled = bloqueado;
-      });
-    });
-    const completo = usados.length===4;
-    blk.classList.toggle('done', completo);
-    const faltam = NUMS.filter(n=>!usados.includes(n));
-    blk.querySelector(`.bs[data-st="${bi}"]`).textContent = completo ? 'Concluído' : 'Faltam ' + faltam.join(' · ');
-  }
-
-  function atualiza(){
-    const prontos = resp.filter(r=>r.filter(v=>v!==null).length===4).length;
-    fil.style.width = (prontos/BLOCOS.length*100)+'%';
-    cnt.textContent = prontos+'/10';
-    go.disabled = prontos<BLOCOS.length;
-  }
-
-  cont.addEventListener('click', e=>{
-    const op = e.target.closest('.opt');
-    if(!op) return;
-    const row = op.closest('.row');
-    const bi = +row.dataset.b, pi = +row.dataset.p, n = +op.dataset.n;
-    if(resp[bi][pi]===n){ resp[bi][pi]=null; }        // toca de novo = desmarca
-    else {
-      const antes = resp[bi].indexOf(n);              // ninguém repete o número
-      if(antes>-1) resp[bi][antes]=null;
-      resp[bi][pi]=n;
-    }
-    pintaBloco(bi); atualiza();
-  });
-
-  BLOCOS.forEach((_,i)=>pintaBloco(i));
-  atualiza();
-
-  go.addEventListener('click', ()=>{
-    const tot = [0,0,0,0];
-    resp.forEach(r=>r.forEach((v,i)=>{ tot[i]+= (v||0); }));
-    const soma = tot.reduce((a,b)=>a+b,0);
-    const ord = tot.map((v,i)=>({v, i})).sort((a,b)=>b.v-a.v || a.i-b.i);
-    const top = PERFIS[ord[0].i];
-
-    const linha = ord.map(o=>`${o.v} ${PERFIS[o.i].nome}`).join(' · ');
-    const msg = `Fiz o Teste de Perfil Comportamental do Mulheres Frutíferas 🌿\n\nMeu resultado:\n${ord.map(o=>`${o.v} pontos — ${PERFIS[o.i].nome}`).join('\n')}\n\nTotal: ${soma} pontos\nPerfil predominante: ${top.nome}`;
-    const wa = 'https://wa.me/5562991458080?text=' + encodeURIComponent(msg);
-
-    resBox.innerHTML = `
-      <div class="res">
-        <div class="k">Seu perfil predominante</div>
-        <div class="big">${top.nome}</div>
-        <div class="sub">${linha}</div>
-        <div class="bars">
-          ${ord.map(o=>`
-            <div class="bar" style="--c:${PERFIS[o.i].c};--c2:${PERFIS[o.i].c2}">
-              <div class="bt"><span class="bnm">${PERFIS[o.i].nome}</span><span class="bvl">${o.v}</span></div>
-              <div class="btk"><div class="bfl" data-w="${o.v}"></div></div>
-            </div>`).join('')}
-        </div>
-        <div class="tot">Total: ${soma} pontos</div>
-        <div class="desc"><h4>O que isso diz sobre você</h4><p>${top.tr}</p></div>
-        <div class="verso">"Deus nos fez diferentes e únicos<br>para que juntas possamos frutificar onde formos."</div>
-        <div class="acoes">
-          <a class="wapp" href="${wa}" target="_blank" rel="noopener">Enviar meu resultado</a>
-          <button class="again" type="button" id="tstAgain">Refazer o teste</button>
-        </div>
-      </div>`;
-    document.querySelector('.tstwrap').classList.add('fim');
-    requestAnimationFrame(()=>{
-      resBox.querySelectorAll('.bfl').forEach(b=>{ b.style.width = (b.dataset.w/50*100)+'%'; });
-      resBox.querySelector('.res').scrollIntoView({behavior:'smooth', block:'start'});
-    });
-    document.getElementById('tstAgain').addEventListener('click', ()=>{
-      document.querySelector('.tstwrap').classList.remove('fim');
-      resp.forEach(r=>r.fill(null));
-      BLOCOS.forEach((_,i)=>pintaBloco(i));
-      atualiza(); resBox.innerHTML='';
-      cont.scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  });
-})();
 
 </script>
 </body>
